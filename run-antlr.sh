@@ -7,6 +7,9 @@ INPUT_FILE=input.txt
 ANTLR_JAR=/usr/local/lib/antlr-4.7.2-complete.jar
 CLASSPATH=$ANTLR_JAR:.
 
+echo
+echo Parsing $GRAMMAR.g4
+
 # cleanup
 rm *.java  2> /dev/null
 rm *.class  2> /dev/null
