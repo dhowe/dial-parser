@@ -4,6 +4,9 @@ GRAMMAR=Dial
 START_RULE=chat
 INPUT_FILE=input.txt
 
+# not yet used
+OUTPUT_DIR=ta# not yet usedrget/generated-sources/antlr4
+
 ANTLR_JAR=/usr/local/lib/antlr-4.7.2-complete.jar
 CLASSPATH=$ANTLR_JAR:.
 
