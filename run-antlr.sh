@@ -39,4 +39,3 @@ echo Running $INPUT_FILE
 
 # run grammar
 grun $GRAMMAR $START_RULE -tokens -tree $INPUT_FILE | sed -e $'s/(chat/\\\n(chat/g' | sed -e $'s/(line/\\\n  (line/g'
-
