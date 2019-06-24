@@ -9,17 +9,17 @@ import org.antlr.v4.gui.Trees;
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.atn.PredictionMode;
 
-public class AntlrTestRig extends TestRig
+public class DialTestRig extends TestRig
 {
   public static void main(String[] args) throws Exception
   {
-    TestRig testRig = new AntlrTestRig(new String[] {
+    TestRig testRig = new DialTestRig(new String[] {
         "Dial", "chat", "-tokens", "-tree", "input.txt"
     });
     testRig.process();
   }
 
-  public AntlrTestRig(String[] arg0) throws Exception
+  public DialTestRig(String[] arg0) throws Exception
   {
     super(arg0);
   }
@@ -69,7 +69,7 @@ public class AntlrTestRig extends TestRig
         s = s.replaceAll("\\(cmd","\n  (cmd");
         s = s.replaceAll("\\(set","\n  (set");
         s = s.replaceAll("\\(find","\n  (find");
-        s = s.replaceAll("\\(expr ([^)]+)", "(expr '$1'");
+        s = s.replaceAll("\\(expr ([^)]+)", "(expr $1");
         s = s.replaceAll("   ", " ");
         System.out.println("\n"+s);//.replaceAll(" ", "_"));
       }

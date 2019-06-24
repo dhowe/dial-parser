@@ -4,15 +4,14 @@ options { tokenVocab=DialLexer; }
 
 chat: (cmd | set)+;
 set: SET ident expr WS*;
-//find: CMDFIND (label | query) WS*;
 cmd: CMD expr? WS* label? WS* meta? WS*;
-expr: WORD (WS+ WORD)*;
+expr: (WORD | id) (WS+ (WORD | id))*;
 meta: LB kv (COM kv)* MRB;
-kv: key EQ val;
-val: (MID | (DQ expr DQ));
+val: (MID | (OQ (QEXPR | MID)+ CQ));
+
+kv: key op val;
+id: ID;
+op: OP;
 key: MID;
 ident: ID1;
 label: LABEL; 
-
-// WORKING HERE ***
-query: LB kv (COM kv)* MRB;

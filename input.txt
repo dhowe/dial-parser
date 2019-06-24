@@ -3,12 +3,14 @@ ASK Who are you?
 OPT Yes #Go
 OPT No or not sure #Stop
 SET $a1 = The  white dog
-SET a2 = The black dog
+SET a2 = The $col dog
 GO #_C23
+
 FIND #FUN
-FIND {a=b,c=d}
+FIND {a!=b,c*='d e'}
+FIND {$a=b}
 
-
-
-
-// NEXT: debug FIND
+SAY OK {a=b}
+SAY OK {$a=b}
+SAY OK {a=$b}
+SAY OK {a='b a'}
