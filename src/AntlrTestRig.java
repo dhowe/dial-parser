@@ -22,7 +22,6 @@ public class AntlrTestRig extends TestRig
   public AntlrTestRig(String[] arg0) throws Exception
   {
     super(arg0);
-    // TODO Auto-generated constructor stub
   }
 
   protected void process(Lexer lexer, Class<? extends Parser> parserClass, Parser parser, CharStream input) throws IOException, IllegalAccessException, InvocationTargetException, PrintException
@@ -67,8 +66,12 @@ public class AntlrTestRig extends TestRig
 
       if (printTree) {
         String s = tree.toStringTree(parser);
-        s = s.replaceAll("\\(line","\n  (line");
-        System.out.println("\n"+s);
+        s = s.replaceAll("\\(cmd","\n  (cmd");
+        s = s.replaceAll("\\(set","\n  (set");
+        s = s.replaceAll("\\(find","\n  (find");
+        s = s.replaceAll("\\(expr ([^)]+)", "(expr '$1'");
+        s = s.replaceAll("   ", " ");
+        System.out.println("\n"+s);//.replaceAll(" ", "_"));
       }
       if (gui) {
         Trees.inspect(tree, parser);

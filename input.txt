@@ -1,2 +1,14 @@
-SAY Hello there {a=b}
+SAY Hello there {a=b,c1 = dog}
 ASK Who are you?
+OPT Yes #Go
+OPT No or not sure #Stop
+SET $a1 = The  white dog
+SET a2 = The black dog
+GO #_C23
+FIND #FUN
+FIND {a=b,c=d}
+
+
+
+
+// NEXT: debug FIND
